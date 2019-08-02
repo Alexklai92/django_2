@@ -14,6 +14,7 @@ def index(request):
 def landing(request):
     ab_test_arg = request.GET.get('ab-test-arg', None)
     if ab_test_arg == 'test':
+        counter_show[ab_test_arg] += 1
         return render_to_response('landing_alternate.html')
     counter_show[ab_test_arg] += 1
     return render_to_response('landing.html')
