@@ -18,5 +18,5 @@ def stylize(value, row):
                 return '#FCA4B3'
             elif 5 >= val > 2:
                 return '#FF0B2B'
-            elif val > 4:
+            elif val > 5:
                 return '#c40b21'
