@@ -4,6 +4,8 @@
 {% load phone_attr_filter %}
 
 {% block title %}Каталог{% endblock %}
+
+
 {% block content %}
     <div class="container">
         <div class="header">
@@ -11,29 +13,29 @@
         </div>
           <div class="row">
             <div class="col">
-              <p>Модель:</p>
-              <p>Стоимость:</p>
-              <p>Операционная система:</p>
-              <p>Оперативная память:</p>
-              <p>Число пикселей на дюйм:</p>
-              <p>Двойная камера</p>
-              <p>Процессор:</p>
-              <p>Разрешение экрана:</p>
-              <p>FM-радио:</p>
-              <p>Дополнительно:</p>
+              <div class="row">Модель:</div>
+              <div class="row">Стоимость:</div>
+              <div class="row">Операционная система:</div>
+              <div class="row">Оперативная память:</div>
+              <div class="row">Число пикселей на дюйм:</div>
+              <div class="row">Двойная камера</div>
+              <div class="row">Процессор:</div>
+              <div class="row">Разрешение экрана:</div>
+              <div class="row">FM-радио:</div>
+              <div class="row">Дополнительно:</div>
             </div>
           {% for phone in phones %}
             <div class="col">
-              <p><b>{{ phone.name }}</b></p>
-              <p>{{ phone.price }}</p>
-              <p>{{ phone.phone_os }}</p>
-              <p>{{ phone.phone_ram }}</p>
-              <p>{{ phone.ppi }}</p>
-              <p>{{ phone.dual_camera|check_attr }}</p>
-              <p>{{ phone.processor }}</p>
-              <p>{{ phone.screen_resolution }}</p>
-              <p>{{ phone.radio|check_attr }}</p>
-              <p>{{ phone.optional|linebreaks }}</p>
+              <div class="row"><b>{{ phone.name }}</b></div>
+              <div class="row">{{ phone.price }}</div>
+              <div class="row">{{ phone.phone_os }}</div>
+              <div class="row">{{ phone.phone_ram }}</div>
+              <div class="row">{{ phone.ppi }}</div>
+              <div class="row">{{ phone.dual_camera|check_attr }}</div>
+              <div class="row">{{ phone.processor }}</div>
+              <div class="row">{{ phone.screen_resolution }}</div>
+              <div class="row">{{ phone.radio|check_attr }}</div>
+              <div class="row">{{ phone.optional|linebreaks }}</div>
               </div>
             {% endfor %}
             </div>
