@@ -1,30 +1,25 @@
 from django.db import models
-
-# Create your models here.
-from django.shortcuts import render
-from django.db import models
+from django.conf import settings
 
 
-# from phones.models import
-
-class TableFieldSettings(models.Model):
-    title = models.CharField(max_length=50)
-    width = models.IntegerField()
-    index = models.IntegerField()
+class Table(models.Model):
+    ordinal_column = models.IntegerField(primary_key=True)
+    name_column = models.CharField(max_length=50)
+    width_column = models.IntegerField(default=1)
 
     def __str__(self):
-        return f'{self.title}'
+        return self.name_column
 
 
-class Path(models.Model):
-    path = models.FilePathField()
+class FilePath(models.Model):
+    file_obj = models.FilePathField(path=settings.BASE_DIR)
 
     @property
     def get_path(self):
-        return self.path
+        return self.file_obj
 
-    def set_path(self, path):
-        self.path = path
+    def set_path(self, file_obj):
+        self.file_obj = file_obj
 
     def __str__(self):
-        return f'{self.path}'
+        return self.file_obj
