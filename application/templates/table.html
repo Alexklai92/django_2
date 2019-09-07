@@ -9,16 +9,16 @@
         </div>
         <div class="row">
             {% for col in columns %}
-                <div class="col-md-{{ col.width }} header">
-                    {{ col.name }}
+                <div class="col-md-{{ col.width_column }} header">
+                    {{ col.name_column }}
                 </div>
             {% endfor %}
         </div>
         {% for row in table %}
             <div class="row">
                 {% for col in columns %}
-                    <div class="col-md-{{ col.width }}">
-                        {{ row|get_item:col.name }}
+                    <div class="col-md-{{ col.width_column }}">
+                        {{ row|get_item:col.name_column }}
                     </div>
                 {% endfor %}
             </div>
